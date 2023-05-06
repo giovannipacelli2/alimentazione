@@ -4,6 +4,7 @@
 
 h4 {
     color: var(--clr-grey-1);
+    font-size: 1.2em;
 }
 
 .food-container .hr {

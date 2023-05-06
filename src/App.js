@@ -57,8 +57,6 @@ function App() {
         acc.prot += prot /100 * dose;
         acc.fat += fat /100 * dose;
 
-        console.log(acc);
-
         return acc;
       }, {...VOID_MACRO} )  );
     }
