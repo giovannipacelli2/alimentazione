@@ -1,0 +1,3 @@
+/*! For license information please see main.e9dcdb18e6e7c34a383f.hot-update.js.LICENSE.txt */
+"use strict";self.webpackHotUpdatenews("main",{"./src/components/Navbar.js":function(e,n,t){t.r(n);var a=t("./node_modules/react/index.js"),c=t.n(a),r=t("./node_modules/react-router-dom/dist/index.js"),o=window.location.pathname.split("/")[1];n.default=function(){return c().createElement("header",{className:"header-navbar"},c().createElement("nav",null,c().createElement(r.Link,{to:"/".concat(o,"/")},"home"),c().createElement(r.Link,{to:"/".concat(o,"/search")},"search")))}}});
+//# sourceMappingURL=main.e9dcdb18e6e7c34a383f.hot-update.js.map

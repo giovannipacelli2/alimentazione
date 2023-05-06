@@ -12,6 +12,8 @@ import SearchForm from "./components/SearchForm";
 import SumFood from './components/SumFood';
 import SaveFood from './components/SaveFood';
 
+const PATH = window.location.pathname.split(`/`)[1];
+
 const VOID_MACRO = {
   kcal:0,
   carbo: 0,
@@ -121,7 +123,7 @@ function App() {
 
         <Routes>
 
-        <Route exact path='/' element={
+        <Route exact path={`/${PATH}/`} element={
           <>
             <MainFoodList food={food} changeDose={changeDose} removeFood={removeFood} />
             { 
@@ -135,7 +137,7 @@ function App() {
           </>
         }/>
           
-          <Route path='/search' element={
+          <Route path = {`${PATH}/search`} element={
             <SearchForm database={database} setDatabase={setDatabase} />
           }/>
         </Routes>
