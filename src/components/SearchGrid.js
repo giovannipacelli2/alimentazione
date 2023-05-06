@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import React from 'react'
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const SearchGrid = ({matchElem, addElem}) => {
