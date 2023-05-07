@@ -56,7 +56,7 @@ h4 {
     text-transform: capitalize;
     font-size: 1rem;
     letter-spacing: var(--spacing);
-    margin-top: 2rem;
+    margin-top: 0.8rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     cursor: pointer;
@@ -163,12 +163,14 @@ h4 {
     align-items: center;
 
     color: var(--clr-white);
-
-    font-size: 2em;
 }
 
 .header-navbar nav a {
+    font-size: 1.2em;
     color: var(--clr-white);
+}
+.header-navbar nav a:hover {
+    text-shadow: 3px 2px 10px var(--clr-white);
 }
 
 /*-----------Food-MAIN-table---------*/
@@ -181,7 +183,7 @@ h4 {
     justify-content: center;
     align-content: center;
     gap: 1em;
-    grid-template-columns: repeat( auto-fit, minmax( 24em, 1fr ) );
+    grid-template-columns: repeat( auto-fit, minmax( 15em, 1fr ) );
 }
 
 .row-flex {
@@ -210,7 +212,7 @@ h4 {
     align-items: center;
     
     background: var(--clr-white);
-    width: 70%;
+    width: 95%;
     border-radius: var(--radius);
     
     box-shadow: var(--dark-shadow);
@@ -243,10 +245,10 @@ h4 {
     /* display: block; */
     margin-bottom: var(--textMarginBottom);
 }
-
-.input-container {
+/*-----------------------INPUT----------------------*/
+.food-description .input-container {
     margin: 1em;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,10 +258,32 @@ h4 {
     margin: 0;
     font-size: 1em;
 }
-.input-container>input{
+.food-container .input-container>input{
     width: 70%;
 }
-.input-container>button{
+.food-container .input-container>button{
+    width: 20%;
+}
+/*----------------------FORM-INPUT----------------------*/
+
+.form .input-container {
+    margin: 1em;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 92%;
+}
+
+.form .input-container label {
+    width: 100%;
+}
+.form .input-container input {
+    width: 100%;
+}
+.input-container>label{
     width: 30%;
 }
 
@@ -268,7 +292,7 @@ h4 {
     border-color: var(--clr-grey-8);
     border-radius: var(--radius);
     padding: 0.25rem 0.5rem;
-  }
+}
 
 /*-----------Food-MAIN-table---------*/
 
@@ -283,12 +307,24 @@ h4 {
 
 @media screen and (min-width:476px) {
 
+    /*-----------------SECTION-NAVBAR-------------*/
+
+    .header-navbar nav a {
+        font-size: 1.7em;
+    }
+
+    .btn-2 {
+        margin-top: 1.2rem;
+    }
+
     .container {
         margin-top:4em;
     }
 
     .food-card-grid {
         justify-items: center;
+        gap: 1em;
+        grid-template-columns: repeat( auto-fit, minmax( 24em, 1fr ) );
     }
     
     .food-container {
@@ -300,7 +336,41 @@ h4 {
         margin: 4em auto;
     }
 
-    .input-container {
+    /*-------------------------INPUT------------------------*/
+
+    .food-container .input-container>input{
+        width: 70%;
+    }
+    .food-container .input-container>button{
+        width: 30%;
+    }
+
+    /*----------------------FORM-INPUT----------------------*/
+
+    .form .input-container {
+        margin: 1em;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+    }
+
+    .form .input-container label {
+        text-align: left;
+        min-width: fit-content;
+        width: 30%;
+    }
+    .form .input-container input {
+        width: 70%;
+    }
+    .input-container>label{
+        width: 30%;
+    }
+
+    .food-container .input-container {
         margin: 1em;
     
         display: flex;

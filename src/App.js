@@ -11,6 +11,7 @@ import MainFoodList from './components/MainFoodList';
 import SearchForm from "./components/SearchForm";
 import SumFood from './components/SumFood';
 import SaveFood from './components/SaveFood';
+import AddLocal from './components/AddLocal';
 
 const PATH = window.location.pathname.split(`/`)[1];
 
@@ -137,6 +138,10 @@ function App() {
           
           <Route path = {`${PATH}/search`} element={
             <SearchForm database={database} setDatabase={setDatabase} />
+          }/>
+
+          <Route path = {`${PATH}/add`} element={
+            <AddLocal database={database} setDatabase={setDatabase} />
           }/>
         </Routes>
         </main>

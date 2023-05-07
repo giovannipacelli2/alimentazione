@@ -8,8 +8,9 @@ const Navbar = () => {
   return (
     <header className='header-navbar'>
       <nav>
-        <Link to={`${PATH}/`}>home</Link>
-        <Link to={`${PATH}/search`}>search</Link>
+        <Link to={`${PATH}/`}>Home</Link>
+        <Link to={`${PATH}/search`}>Cerca</Link>
+        <Link to={`${PATH}/add`}>Aggiungi</Link>
       </nav>
     </header>
   )
