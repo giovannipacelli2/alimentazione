@@ -116,6 +116,7 @@ h4 {
 .food-icon-minus,
 .food-icon-plus {
     font-size: 1.6em;
+    cursor: pointer;
 }
 .food-icon-minus {
     color: var(--clr-red-dark);

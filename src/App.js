@@ -46,7 +46,7 @@ function App() {
 
     if ( saveLocal ) {
 
-      saveLocal = saveLocal.json();
+      saveLocal = JSON.parse(saveLocal);
 
       setDatabase( (prevDatabase)=>{
         return [

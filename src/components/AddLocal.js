@@ -1,5 +1,5 @@
-import { data } from 'autoprefixer';
-import React from 'react'
+import {AiOutlineMinus} from 'react-icons/ai';
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 
 const AddLocal = ({database, setDatabase}) => {
@@ -13,6 +13,17 @@ const AddLocal = ({database, setDatabase}) => {
     };
 
     const [ form, setForm ] = useState(VOID_FORM);
+    const [ local, setLocal ] = useState([]);
+
+    useEffect( ()=>{
+        let tmp = localStorage.getItem("saveLocal");
+
+        if (!tmp) return;
+
+        tmp = JSON.parse(tmp);
+        setLocal(tmp);
+
+    }, [localStorage.getItem("saveLocal")] );
 
     const handleChange = (e)=> {
         let { name, value } = e.target;
@@ -29,11 +40,38 @@ const AddLocal = ({database, setDatabase}) => {
         setForm( VOID_FORM );
     };
 
+    const removeCustomFood = (id) => {
+
+        let saveLocal = localStorage.getItem("saveLocal");
+        if (!saveLocal) return;
+
+        let newDb = database.filter( (food)=> food.id !== id );
+        setDatabase(newDb);
+    
+        saveLocal = JSON.parse(saveLocal);
+        let tmpLocal = saveLocal.filter( (item)=> item.id !== id );
+        tmpLocal = JSON.stringify(tmpLocal);
+
+        localStorage.setItem( "saveLocal", tmpLocal );
+        
+    };
+
     const handleSubmit = (e)=> {
         e.preventDefault();
 
         let { name, kcal, carbo, prot, fat } = form;
-        let lastId = database.length;
+
+        for ( let elem in form ) {
+            if ( form[elem] === "" ) {
+                alert("Compila tutti i campi");
+                return;
+            }
+            if ( +form[elem] < 0 ) {
+                alert("Inserisci solo valori positivi");
+                return;
+            }
+        }
+        let lastId = database.length+1;
 
         let tmpObj = {
             id: lastId,
@@ -49,8 +87,11 @@ const AddLocal = ({database, setDatabase}) => {
         };
 
         let find = database.filter( (food) => food.name === name.toLowerCase() );
-        console.log(find);
-        if (find[0]) return;
+
+        if (find[0]) {
+            alert("Alimento già presente");
+            return;
+        }
 
         setDatabase( (prevDatabase)=>{
             return [
@@ -58,85 +99,116 @@ const AddLocal = ({database, setDatabase}) => {
                 tmpObj
             ];
         } );
+
+        let local = localStorage.getItem("saveLocal");
+
+        let tmpLocal = local ? JSON.parse(local) : [] ;
+        tmpLocal.push(tmpObj);
+        localStorage.setItem("saveLocal", JSON.stringify(tmpLocal));
     };
 
   return (
-    <form className='form' onSubmit={(e)=>{handleSubmit(e)}}>
-        <div className="input-container">
-            <label htmlFor="name">Nome</label>
-            <input 
-                autoComplete='off'
-                type="text"
-                name='name'
-                id='name'
-                value={form.name}
-                onChange={(e)=>{handleChange(e)}}
-            />
-        </div>
+    <>
+        <form className='form' onSubmit={(e)=>{handleSubmit(e)}}>
+            <div className="input-container">
+                <label htmlFor="name">Nome</label>
+                <input 
+                    autoComplete='off'
+                    type="text"
+                    name='name'
+                    id='name'
+                    value={form.name}
+                    onChange={(e)=>{handleChange(e)}}
+                />
+            </div>
 
-        <div className="input-container">
-            <label htmlFor="kcal">Kcal</label>
-            <input 
-                autoComplete='off'
-                type="number"
-                name='kcal'
-                id='kcal'
-                value={form.kcal}
-                onChange={(e)=>{handleChange(e)}}
-            />
-        </div>
+            <div className="input-container">
+                <label htmlFor="kcal">Kcal</label>
+                <input 
+                    autoComplete='off'
+                    type="number"
+                    name='kcal'
+                    id='kcal'
+                    value={form.kcal}
+                    onChange={(e)=>{handleChange(e)}}
+                />
+            </div>
 
-        <div className="input-container">
-            <label htmlFor="carbo">Carboidrati</label>
-            <input 
-                autoComplete='off'
-                type="number"
-                name='carbo'
-                id='carbo'
-                value={form.carbo}
-                onChange={(e)=>{handleChange(e)}}
-            />
-        </div>
+            <div className="input-container">
+                <label htmlFor="carbo">Carboidrati</label>
+                <input 
+                    autoComplete='off'
+                    type="number"
+                    name='carbo'
+                    id='carbo'
+                    value={form.carbo}
+                    onChange={(e)=>{handleChange(e)}}
+                />
+            </div>
 
-        <div className="input-container">
-            <label htmlFor="prot">Proteine</label>
-            <input 
-                autoComplete='off'
-                type="number"
-                name='prot'
-                id='prot'
-                value={form.prot}
-                onChange={(e)=>{handleChange(e)}}
-            />
-        </div>
+            <div className="input-container">
+                <label htmlFor="prot">Proteine</label>
+                <input 
+                    autoComplete='off'
+                    type="number"
+                    name='prot'
+                    id='prot'
+                    value={form.prot}
+                    onChange={(e)=>{handleChange(e)}}
+                />
+            </div>
 
-        <div className="input-container">
-            <label htmlFor="fat">Grassi</label>
-            <input 
-                autoComplete='off'
-                type="number"
-                name='fat'
-                id='fat'
-                value={form.fat}
-                onChange={(e)=>{handleChange(e)}}
-            />
-        </div>
+            <div className="input-container">
+                <label htmlFor="fat">Grassi</label>
+                <input 
+                    autoComplete='off'
+                    type="number"
+                    name='fat'
+                    id='fat'
+                    value={form.fat}
+                    onChange={(e)=>{handleChange(e)}}
+                />
+            </div>
 
-        <button
-            type='submit'
-            className='btn-2'
-        >
-            Aggiungi
-        </button>
-        <button
-            type='button'
-            className='btn-2'
-            onClick={resetForm}
-        >
-            Reset
-        </button>
+            <button
+                type='submit'
+                className='btn-2'
+            >
+                Aggiungi
+            </button>
+            <button
+                type='button'
+                className='btn-2'
+                onClick={resetForm}
+            >
+                Reset
+            </button>
 
-    </form>
+        </form>
+        
+        <section className="section">
+            {
+                local.map( (item)=>{
+                    return (
+                        <div 
+                            key={item.id}
+                            id={item.id}
+                            className={ "item food-item" }
+                        >
+                            <h4>{item.name}</h4>
+                            <h4>kcal: {item.kcal}</h4>
+                            <button 
+                                type='button'
+                                onClick={()=>{removeCustomFood(item.id)}}
+                            >
+                                <AiOutlineMinus className='food-icon-minus'/>
+                            </button>
+                        </div>
+                    );
+                } )
+            }
+        </section>
+    </>
   )
 }
 
