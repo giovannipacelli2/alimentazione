@@ -105,6 +105,8 @@ const AddLocal = ({database, setDatabase}) => {
         let tmpLocal = local ? JSON.parse(local) : [] ;
         tmpLocal.push(tmpObj);
         localStorage.setItem("saveLocal", JSON.stringify(tmpLocal));
+
+        resetForm();
     };
 
   return (
