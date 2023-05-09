@@ -44,10 +44,20 @@ const AddLocal = ({database, setDatabase}) => {
                 prot: prot,
                 fat: fat,
             },
-            dose: 100
+            dose: 100,
+            selected: false
         };
 
-        console.log(tmpObj);
+        let find = database.filter( (food) => food.name === name.toLowerCase() );
+        console.log(find);
+        if (find[0]) return;
+
+        setDatabase( (prevDatabase)=>{
+            return [
+                ...prevDatabase,
+                tmpObj
+            ];
+        } );
     };
 
   return (

@@ -32,13 +32,30 @@ function App() {
 
   let [ database, setDatabase ] = useState([]);
 
-  useEffect( ()=>{  // Aggiunge SELECTED al database
+  useEffect( ()=>{  
+
+    // Aggiunge SELECTED al database
     setDatabase( valoriNutrizionali.map( (food)=>{
       return {
         ...food,
         selected: false
       }
     } ) );
+
+    let saveLocal = localStorage.getItem("saveLocal");
+
+    if ( saveLocal ) {
+
+      saveLocal = saveLocal.json();
+
+      setDatabase( (prevDatabase)=>{
+        return [
+          ...prevDatabase,
+          ...saveLocal
+          ];
+      });
+    }
+
   }, [] );
 
   useEffect( ()=>{
