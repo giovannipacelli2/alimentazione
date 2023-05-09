@@ -109,6 +109,8 @@ const AddLocal = ({database, setDatabase}) => {
 
   return (
     <>
+        <h3 className='page-title'>Gestisci i tuoi alimenti personalizzati</h3>
+
         <form className='form' onSubmit={(e)=>{handleSubmit(e)}}>
             <div className="input-container">
                 <label htmlFor="name">Nome</label>

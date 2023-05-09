@@ -2,6 +2,11 @@
     --textMarginBottom: 0.8em;
 }
 
+.page-title {
+    margin: 1em auto;
+    text-transform: none;
+}
+
 h4 {
     color: var(--clr-grey-1);
     font-size: 1.2em;
@@ -323,6 +328,11 @@ h4 {
 }
 
 
+@media screen and (min-width:380px) {
+    .page-title {
+        width: 20em;
+    }
+}
 @media screen and (min-width:476px) {
 
     /*-----------------SECTION-NAVBAR-------------*/
@@ -412,6 +422,12 @@ h4 {
     .header-navbar nav {
         margin: auto;
         width: 45em;
+    }
+}
+
+@media screen and (min-width:800px) {
+    .page-title {
+        width: 18em;
     }
 }
 
