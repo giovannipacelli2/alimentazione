@@ -12,6 +12,7 @@ import SearchForm from "./components/SearchForm";
 import SumFood from './components/SumFood';
 import SaveFood from './components/SaveFood';
 import AddLocal from './components/AddLocal';
+import Summary from './components/Summary';
 
 const PATH = window.location.pathname.split(`/`)[1];
 
@@ -145,7 +146,7 @@ function App() {
             { 
                food[0] ? <> <hr className='hr'/> 
                 <SumFood total={total} setCopyTotal={setCopyTotal} />
-              </> : <h2 className='home-phrase'>Cerca un alimento</h2>
+              </> : <h3 className='page-title'>Cerca un alimento</h3>
               
             }
             { copyTotal && <SaveFood copyTotal={copyTotal} close={removeSaveMacro}/> }
@@ -159,6 +160,12 @@ function App() {
 
           <Route path = {`${PATH}/add`} element={
             <AddLocal database={database} setDatabase={setDatabase} />
+          }/>
+
+          <Route path = {`${PATH}/summary`} element={
+            total ? 
+              <Summary total={total} /> : 
+              <h3 className='page-title'>Nessun dato da mostrare</h3>
           }/>
         </Routes>
         </main>

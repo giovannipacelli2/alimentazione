@@ -330,10 +330,46 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     margin-bottom: 3em;
 }
 
+
+/*------------SUMMARY-table----------*/
+
+.summary-table {
+    margin: 3em auto auto auto;
+    width: 80%;
+    table-layout: auto;
+
+    border-spacing: 0;
+}
+
+.summary-table td,
+.summary-table th {
+    border: 1px solid black;
+    padding: 1em;
+    
+}
+
+/* #workout-table th,
+#workout-table td {
+  min-width: 200px;
+  border: 1px solid rgb(140, 140, 140);
+  padding: 5px 10px;
+  border-top-width: 0;
+  border-left-width: 0;
+  text-align: center;
+}
+
+#workout-table th:last-child,
+#workout-table td:last-child {
+  border-right-width: 0;
+}
+
+#workout-table tr:last-child td {
+  border-bottom-width: 0;
+} */
 
 @media screen and (min-width:380px) {
     .page-title {

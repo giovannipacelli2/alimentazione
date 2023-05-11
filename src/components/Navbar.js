@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import {AiOutlineHome} from 'react-icons/ai';
 import {TbListSearch} from 'react-icons/tb';
-import {MdOutlineDashboardCustomize} from 'react-icons/md';
+import {MdOutlineDashboardCustomize, MdOutlineDataset} from 'react-icons/md';
 
 const PATH = window.location.pathname.split(`/`)[1];
 
@@ -20,6 +20,13 @@ const Navbar = () => {
           </span>
         </Link>
 
+        <Link to={`${PATH}/summary`}>
+          <span className="nav-icons">
+            <MdOutlineDataset/>
+            <span className='icons-text'>Riepilogo</span>
+          </span>
+        </Link>
+
         <Link to={`${PATH}/search`}>
           <span className="nav-icons">
             <TbListSearch/>
@@ -30,7 +37,7 @@ const Navbar = () => {
         <Link to={`${PATH}/add`}>
           <span className="nav-icons">
             <MdOutlineDashboardCustomize/>
-            <span className='icons-text'>Personalizza</span>
+            <span className='icons-text'>Modifica</span>
           </span>
         </Link>
 
