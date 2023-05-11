@@ -15,6 +15,7 @@ import AddLocal from './components/AddLocal';
 import Summary from './components/Summary';
 
 const PATH = window.location.pathname.split(`/`)[1];
+console.log(PATH);
 
 const VOID_MACRO = {
   kcal:0,
@@ -25,6 +26,13 @@ const VOID_MACRO = {
 
 function App() {
 
+  // Controllo sul peso memorizzato localmente
+  let localWeight = localStorage.getItem("weight");
+  if ( localWeight ) {
+      localWeight = parseFloat(localWeight);
+  }
+  else { localWeight = 0 }
+
   let [ food, setFood ] = useState([]);
 
   const [ total, setTotal ] = useState("");
@@ -33,7 +41,7 @@ function App() {
 
   let [ database, setDatabase ] = useState([]);
 
-  const [ weight, setWeight ] = useState(0);
+  const [ weight, setWeight ] = useState(localWeight);
 
   useEffect( ()=>{  
 
@@ -58,13 +66,6 @@ function App() {
           ...saveLocal
           ];
       });
-    }
-
-    // Controllo sul peso memorizzato localmente
-    let localWeight = localStorage.getItem("weight");
-    if ( localWeight ) {
-        localWeight = parseFloat(localWeight);
-        setWeight(localWeight);
     }
 
   }, [] );
@@ -186,9 +187,12 @@ function App() {
           }/>
 
           <Route path = {`${PATH}/summary`} element={
-            total ? 
-              <Summary total={total} /> : 
-              <h3 className='page-title'>Nessun dato da mostrare</h3>
+            (total && weight !==0 ) ? 
+              <Summary weight={weight} total={total} /> : 
+              <>
+                <h3 className='page-title'>Nessun dato da mostrare</h3>
+                { weight ===0 && <h4 className='red-message'>Vai nella sezione "Modifica" ed inserisci il tuo peso</h4> }
+              </>
           }/>
         </Routes>
         </main>

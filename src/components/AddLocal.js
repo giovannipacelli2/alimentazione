@@ -120,7 +120,6 @@ const AddLocal = ({database, setDatabase, weight,setWeight}) => {
         e.preventDefault();
         if (e.target.weight) {
             let weight = e.target.weight.value;
-            console.log(weight);
             let numWeight = parseFloat(weight);
     
             if ( isEdit && (isNaN(numWeight) || numWeight<=0 ) ) {
@@ -154,7 +153,7 @@ const AddLocal = ({database, setDatabase, weight,setWeight}) => {
                         name='weight'
                         id='weight'
                     /> :
-                    <span><span style={{fontWeight:"700"}}>{weight}</span> kg</span> 
+                    <span><strong>{weight}</strong> kg</span> 
                 }
                 <button className='icon-btn' type='submit'>
                     <AiOutlineEdit

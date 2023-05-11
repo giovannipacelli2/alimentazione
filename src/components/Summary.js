@@ -1,18 +1,15 @@
 import React from 'react'
 
-const Summary = ({ total }) => {
-
+const Summary = ({ total, weight }) => {
     let totalMacro = total.carbo + total.prot + total.fat;
-
-    const peso = 69;
 
     let percCarbo = total.carbo * 100 / totalMacro;
     let percProt = total.prot * 100 / totalMacro;
     let percFat = total.fat * 100 / totalMacro;
 
-    let gCarbo = total.carbo / peso;
-    let gProt = total.prot / peso;
-    let gFat = total.fat / peso;
+    let gCarbo = total.carbo / weight;
+    let gProt = total.prot / weight;
+    let gFat = total.fat / weight;
 
     let kcalCarbo = total.kcal * percCarbo / 100;
     let kcalProt = total.kcal * percProt / 100;
@@ -20,6 +17,7 @@ const Summary = ({ total }) => {
 
   return (
     <section className="container">
+		<h3 className='page-title'>Il tuo peso: {weight} kg</h3>
         <table className='summary-table'>
 		<thead>
 			<tr>
