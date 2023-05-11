@@ -13,28 +13,28 @@ const Navbar = () => {
     <header className='header-navbar'>
       <nav>
 
-        <Link to={`${PATH}/`}>
+        <Link to={`${PATH}`}>
           <span className="nav-icons">
             <AiOutlineHome/>
             <span className='icons-text'>Home</span>
           </span>
         </Link>
 
-        <Link to={`${PATH}/summary`}>
+        <Link to={`${PATH}summary`}>
           <span className="nav-icons">
             <MdOutlineDataset/>
             <span className='icons-text'>Riepilogo</span>
           </span>
         </Link>
 
-        <Link to={`${PATH}/search`}>
+        <Link to={`${PATH}search`}>
           <span className="nav-icons">
             <TbListSearch/>
             <span className='icons-text'>Cerca</span>
           </span>
         </Link>
 
-        <Link to={`${PATH}/add`}>
+        <Link to={`${PATH}add`}>
           <span className="nav-icons">
             <MdOutlineDashboardCustomize/>
             <span className='icons-text'>Modifica</span>
