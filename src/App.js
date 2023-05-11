@@ -33,6 +33,8 @@ function App() {
 
   let [ database, setDatabase ] = useState([]);
 
+  const [ weight, setWeight ] = useState(0);
+
   useEffect( ()=>{  
 
     // Aggiunge SELECTED al database
@@ -43,6 +45,7 @@ function App() {
       }
     } ) );
 
+    // Controllo sul database Locale
     let saveLocal = localStorage.getItem("saveLocal");
 
     if ( saveLocal ) {
@@ -55,6 +58,13 @@ function App() {
           ...saveLocal
           ];
       });
+    }
+
+    // Controllo sul peso memorizzato localmente
+    let localWeight = localStorage.getItem("weight");
+    if ( localWeight ) {
+        localWeight = parseFloat(localWeight);
+        setWeight(localWeight);
     }
 
   }, [] );
@@ -83,6 +93,11 @@ function App() {
       setTotal("");
     }
   }, [food] );
+
+  // ----Controlla la variablie WEIGHT
+  useEffect( ()=>{
+    localStorage.setItem("weight", weight);
+  }, [weight] );
 
 
   /*--------------utile al debug--------------*/
@@ -162,7 +177,12 @@ function App() {
           }/>
 
           <Route path = {`${PATH}/add`} element={
-            <AddLocal database={database} setDatabase={setDatabase} />
+            <AddLocal 
+              database={database}
+              setDatabase={setDatabase} 
+              weight={weight}
+              setWeight={setWeight}
+            />
           }/>
 
           <Route path = {`${PATH}/summary`} element={

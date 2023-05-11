@@ -2,7 +2,7 @@ import {AiOutlineMinus, AiOutlineEdit} from 'react-icons/ai';
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 
-const AddLocal = ({database, setDatabase}) => {
+const AddLocal = ({database, setDatabase, weight,setWeight}) => {
 
     const VOID_FORM = {
         name:"",
@@ -15,9 +15,8 @@ const AddLocal = ({database, setDatabase}) => {
     const [ form, setForm ] = useState(VOID_FORM);
     const [ local, setLocal ] = useState([]);
 
-    const [ isEdit, setIsEdit ] = useState(true);
+    const [ isEdit, setIsEdit ] = useState(false);
     const [ isError, setIsError ] = useState(false);
-    const [ weight, setWeight ] = useState(60);
 
     useEffect( ()=>{
         let tmp = localStorage.getItem("saveLocal");
@@ -119,22 +118,29 @@ const AddLocal = ({database, setDatabase}) => {
 
     const editClick = (e)=> {
         e.preventDefault();
-        let numWeight = parseFloat(weight);
-
-        if ( isEdit && (isNaN(numWeight) || numWeight<=0 ) ) {
-            alert("Inserisci un numero valido");
-            setIsError(true);
-            return;
+        if (e.target.weight) {
+            let weight = e.target.weight.value;
+            console.log(weight);
+            let numWeight = parseFloat(weight);
+    
+            if ( isEdit && (isNaN(numWeight) || numWeight<=0 ) ) {
+                alert("Inserisci un numero valido");
+                setIsError(true);
+                return;
+            }
+            setIsError(false);
+            setWeight(numWeight);
         }
+
+
         setIsEdit( prevIsEdit => !prevIsEdit );
-        setIsError(false);
     };
 
     
 
   return (
     <>
-        <h3 className='page-title'>Gestisci i tuoi alimenti personalizzati</h3>
+        <h3 className='page-title'>Inserisci i dati</h3>
         <form className="form weight-setting" onSubmit={ (e)=>{ editClick(e) } }>
             <label htmlFor="weight">Il tuo peso:</label>
             { 
@@ -143,10 +149,8 @@ const AddLocal = ({database, setDatabase}) => {
                         className={ isError ? "input-error" : "" }
                         type='text' 
                         onChange={ (e)=>{ 
-                            setWeight(e.target.value);
-                            checkWeight(); 
+                            checkWeight(e.target.value); 
                         } }
-                        value={weight}
                         name='weight'
                         id='weight'
                     /> :
