@@ -18,14 +18,14 @@ h4 {
     font-size: 1.2em;
 }
 
+.input-error {
+    border-color: var(--clr-red-dark);
+    outline-color: var(--clr-red-dark);
+}
+
 .food-container .hr {
     width: 100%;
     margin: 1em auto;
-}
-
-.home-phrase {
-    margin: 5% auto;
-    color: var(--clr-grey-2);
 }
 
 .hr {
@@ -396,10 +396,14 @@ h4 {
 .weight-setting>* {
     margin-right: 0.5em;
 }
-.weight-setting .generic-icon {
+.weight-setting .icon-btn {
+    font-size: 1em;
     position: absolute;
     right: 2em;
     margin: auto;
+
+    background-color: transparent;
+    border: none;
 }
 
 @media screen and (min-width:380px) {

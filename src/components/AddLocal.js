@@ -16,7 +16,8 @@ const AddLocal = ({database, setDatabase}) => {
     const [ local, setLocal ] = useState([]);
 
     const [ isEdit, setIsEdit ] = useState(true);
-    const [ weight, setWeight ] = useState("");
+    const [ isError, setIsError ] = useState(false);
+    const [ weight, setWeight ] = useState(60);
 
     useEffect( ()=>{
         let tmp = localStorage.getItem("saveLocal");
@@ -112,35 +113,53 @@ const AddLocal = ({database, setDatabase}) => {
         resetForm();
     };
 
-    const manageWeight = ()=>{
-
+    const checkWeight = ()=>{
+        setIsError(false);
     };
 
-    manageWeight();
+    const editClick = (e)=> {
+        e.preventDefault();
+        let numWeight = parseFloat(weight);
+
+        if ( isEdit && (isNaN(numWeight) || numWeight<=0 ) ) {
+            alert("Inserisci un numero valido");
+            setIsError(true);
+            return;
+        }
+        setIsEdit( prevIsEdit => !prevIsEdit );
+        setIsError(false);
+    };
+
+    
 
   return (
     <>
         <h3 className='page-title'>Gestisci i tuoi alimenti personalizzati</h3>
-        <section className="form weight-setting">
+        <form className="form weight-setting" onSubmit={ (e)=>{ editClick(e) } }>
             <label htmlFor="weight">Il tuo peso:</label>
             { 
                 isEdit ? 
                     <input 
+                        className={ isError ? "input-error" : "" }
                         type='text' 
-                        onChange={ (e)=>{ setWeight(e.target.value) } }
+                        onChange={ (e)=>{ 
+                            setWeight(e.target.value);
+                            checkWeight(); 
+                        } }
                         value={weight}
                         name='weight'
                         id='weight'
                     /> :
                     <span><span style={{fontWeight:"700"}}>{weight}</span> kg</span> 
                 }
-                <AiOutlineEdit
-                    className='generic-icon'
-                    onClick={ ()=> { setIsEdit( prevIsEdit => !prevIsEdit ) } }
-                />
+                <button className='icon-btn' type='submit'>
+                    <AiOutlineEdit
+                        className='generic-icon'
+                    />
+                </button>
 
 
-        </section>
+        </form>
         <hr className='hr' />
 
         <h3 className='page-title'>Gestisci i tuoi alimenti personalizzati</h3>
