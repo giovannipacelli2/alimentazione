@@ -1,4 +1,4 @@
-import {AiOutlineMinus} from 'react-icons/ai';
+import {AiOutlineMinus, AiOutlineEdit} from 'react-icons/ai';
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 
@@ -14,6 +14,9 @@ const AddLocal = ({database, setDatabase}) => {
 
     const [ form, setForm ] = useState(VOID_FORM);
     const [ local, setLocal ] = useState([]);
+
+    const [ isEdit, setIsEdit ] = useState(true);
+    const [ weight, setWeight ] = useState("");
 
     useEffect( ()=>{
         let tmp = localStorage.getItem("saveLocal");
@@ -109,8 +112,37 @@ const AddLocal = ({database, setDatabase}) => {
         resetForm();
     };
 
+    const manageWeight = ()=>{
+
+    };
+
+    manageWeight();
+
   return (
     <>
+        <h3 className='page-title'>Gestisci i tuoi alimenti personalizzati</h3>
+        <section className="form weight-setting">
+            <label htmlFor="weight">Il tuo peso:</label>
+            { 
+                isEdit ? 
+                    <input 
+                        type='text' 
+                        onChange={ (e)=>{ setWeight(e.target.value) } }
+                        value={weight}
+                        name='weight'
+                        id='weight'
+                    /> :
+                    <span><span style={{fontWeight:"700"}}>{weight}</span> kg</span> 
+                }
+                <AiOutlineEdit
+                    className='generic-icon'
+                    onClick={ ()=> { setIsEdit( prevIsEdit => !prevIsEdit ) } }
+                />
+
+
+        </section>
+        <hr className='hr' />
+
         <h3 className='page-title'>Gestisci i tuoi alimenti personalizzati</h3>
 
         <form className='form' onSubmit={(e)=>{handleSubmit(e)}}>

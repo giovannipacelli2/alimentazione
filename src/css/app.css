@@ -124,6 +124,17 @@ h4 {
     opacity: 1;
 }
 
+.generic-icon {
+    font-size: 1.3em;
+    color: var(--clr-grey-2);
+    cursor: pointer;    
+    transition: var(--transition);
+}
+.generic-icon:hover {
+    color: var(--clr-grey-5);
+   
+}
+
 .food-icon-minus,
 .food-icon-plus {
     font-size: 1.6em;
@@ -182,6 +193,7 @@ h4 {
 .header-navbar nav a {
     font-size: 1.2em;
     color: var(--clr-white);
+    transition: var(--transition);
 }
 .header-navbar nav a:hover {
     text-shadow: 3px 2px 15px var(--clr-white);
@@ -364,6 +376,32 @@ h4 {
   border-bottom-width: 0;
 }
 
+/*-----------WEIGHT-SETTING----------*/
+
+.weight-setting {
+    /* border: 1px solid red; */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.weight-setting input {
+    padding: 0.1em;
+    width: 3em;
+}
+
+.weight-setting>* {
+    margin-right: 0.5em;
+}
+.weight-setting .generic-icon {
+    position: absolute;
+    right: 2em;
+    margin: auto;
+}
+
 @media screen and (min-width:380px) {
     .page-title {
         width: 20em;
@@ -456,6 +494,12 @@ h4 {
     
     .input-container>*{
         margin: 0;
+    }
+
+    /*-----------WEIGHT-SETTING----------*/
+
+    .weight-setting {
+        
     }
 }
 
