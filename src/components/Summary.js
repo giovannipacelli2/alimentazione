@@ -10,9 +10,9 @@ const Summary = ({ total }) => {
     let percProt = total.prot * 100 / totalMacro;
     let percFat = total.fat * 100 / totalMacro;
 
-    let gCarbo = peso / total.carbo;
-    let gProt = peso / total.prot;
-    let gFat = peso / total.fat;
+    let gCarbo = total.carbo / peso;
+    let gProt = total.prot / peso;
+    let gFat = total.fat / peso;
 
     let kcalCarbo = total.kcal * percCarbo / 100;
     let kcalProt = total.kcal * percProt / 100;

@@ -79,6 +79,9 @@ function App() {
         return acc;
       }, {...VOID_MACRO} )  );
     }
+    else if ( !food[0] ) {
+      setTotal("");
+    }
   }, [food] );
 
 
