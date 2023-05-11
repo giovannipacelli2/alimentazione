@@ -6,7 +6,7 @@ import {AiOutlineHome} from 'react-icons/ai';
 import {TbListSearch} from 'react-icons/tb';
 import {MdOutlineDashboardCustomize, MdOutlineDataset} from 'react-icons/md';
 
-const PATH = window.location.pathname.split(`/`)[1];
+const PATH = window.location.pathname;
 
 const Navbar = () => {
   return (
