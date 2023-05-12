@@ -101,24 +101,6 @@ function App() {
   }, [weight] );
 
 
-  /*--------------utile al debug--------------*/
-
-  /* useEffect( ()=>{
-    setDatabase( prevState => [
-      ...prevState,
-      {
-        ...prevState[0],
-        selected: true
-      },
-      {
-        ...prevState[2],
-        selected: true
-      }
-    ] );
-  }, [] ); */
-
-/*--------------utile al debug--------------*/
-
   const changeDose = (id, newDose) => {
     setDatabase((prevFood)=>{
       return (
