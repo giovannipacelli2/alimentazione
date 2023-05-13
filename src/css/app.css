@@ -372,8 +372,11 @@ h4 {
 .summary-table td, 
 .summary-table th {
     background-color: #ffffff;
-    background-color: #ffffffaa;
+    background-color: #ffffff75;
     padding: 1em 0;
+
+    text-align: center;
+    margin: auto;
 }
 
 .summary-table th:first-of-type,

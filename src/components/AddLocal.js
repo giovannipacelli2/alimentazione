@@ -2,6 +2,8 @@ import {AiOutlineMinus, AiOutlineEdit} from 'react-icons/ai';
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 
+import {nanoid} from 'nanoid';
+
 const AddLocal = ({database, setDatabase, weight,setWeight}) => {
 
     const VOID_FORM = {
@@ -74,10 +76,10 @@ const AddLocal = ({database, setDatabase, weight,setWeight}) => {
                 return;
             }
         }
-        let lastId = database.length+1;
+        let newID = nanoid(4);
 
         let tmpObj = {
-            id: lastId,
+            id: newID,
             name: name,
             kcal: kcal,
             macro: {
