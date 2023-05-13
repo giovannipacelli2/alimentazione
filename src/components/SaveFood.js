@@ -1,24 +1,36 @@
 import React from 'react'
-import { AiOutlineCloseCircle } from 'react-icons/ai'
+import { IoCloseOutline } from 'react-icons/io5';
 
 const SaveFood = ({copyTotal, close}) => {  
 
     return (
         <section className='section sum'>
             <div className="food-container">
-                <h3>In considerazione</h3>
+
+                <div className='food-description'>                    
+                    <h3>Fissato: <span className='macro-color'>{copyTotal.kcal.toFixed(1)}</span></h3>
+                </div>
+
                 <div className='food-description'>
+
+                    <div className="macro">
+                        <h4>carbo: <span className='macro-color'>{copyTotal.carbo.toFixed(1)}</span></h4>                        
+                    </div>
+
+                    <div className="macro">
+                        <h4>prot: <span className='macro-color'>{copyTotal.prot.toFixed(1)}</span></h4>
+                    </div>
+
+                    <div className="macro">
+                        <h4>fat: <span className='macro-color'>{copyTotal.fat.toFixed(1)}</span></h4>
+                    </div>
                     
-                    <h4>carbo: <span className='macro-color'>{copyTotal.carbo.toFixed(1)}</span></h4>
-                    <h4>prot: <span className='macro-color'>{copyTotal.prot.toFixed(1)}</span></h4>
-                    <h4>fat: <span className='macro-color'>{copyTotal.fat.toFixed(1)}</span></h4>
-                    <h4>kcal: <span className='macro-color'>{copyTotal.kcal.toFixed(1)}</span></h4>
                 </div>
                 <button
                     onClick={close}
                     className='close-btn'
                 >
-                    <AiOutlineCloseCircle/>
+                    <IoCloseOutline/>
                 </button>
             </div>
            

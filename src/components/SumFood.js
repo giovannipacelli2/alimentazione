@@ -6,7 +6,6 @@ const SumFood = ({total, setCopyTotal}) => {
     return (
         <section className='section sum'>
             <div className="food-container">
-
                 
                 <div className='food-description'>                    
                     <h3>Totale kcal: <span className='macro-color'>{total.kcal.toFixed(1)}</span></h3>
