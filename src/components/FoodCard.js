@@ -37,9 +37,8 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
             setIsError(false);
             changeDose(id, food);
         }
-    
-    
-        setIsEdit( prevIsEdit => !prevIsEdit );
+   
+        setIsEdit( (prevIsEdit) => !prevIsEdit );
     };
 
   return (
@@ -47,7 +46,7 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
         <h4>{name}</h4>
         <div className="food-description">
 
-            <span>kcal: <strong>{kcal.toFixed(1)}</strong></span>
+            <span>kcal: <strong>{calcKcal.toFixed(1)}</strong></span>
             <div className="edit-input-container">
                 { 
                     isEdit ? 
@@ -63,7 +62,7 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
                     /> :
                     <span><strong>{dose}</strong> g</span> 
                 }
-                    <button className='icon-btn' type='submit'>
+                    <button className='icon-btn' type='submit' >
                         <AiOutlineEdit
                             className='generic-icon'
                         />

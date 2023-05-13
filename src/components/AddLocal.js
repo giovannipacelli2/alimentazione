@@ -141,7 +141,7 @@ const AddLocal = ({database, setDatabase, weight,setWeight}) => {
     <>
         <h3 className='page-title'>Inserisci i dati</h3>
         <form className="form weight-setting" onSubmit={ (e)=>{ editClick(e) } }>
-            <label htmlFor="weight">Il tuo peso:</label>
+            <span>Il tuo peso:</span>
             { 
                 isEdit ? 
                     <input 

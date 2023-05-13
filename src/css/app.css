@@ -399,6 +399,10 @@ h4 {
     justify-content: center;
 }
 
+.weight-setting span  {
+    font-size: 1.2em;
+}
+
 .weight-setting input {
     padding: 0.1em;
     width: 3em;
