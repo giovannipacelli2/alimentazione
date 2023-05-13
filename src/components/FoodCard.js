@@ -53,6 +53,7 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
                     <input 
                         className={ isError ? "input-error" : "" }
                         type='text' 
+                        inputMode='Numeric'
                         onChange={ ()=>{ 
                             setIsError(false); 
                         } }

@@ -783,6 +783,28 @@ export default [
         },
         dose: 100
     },
+    {
+        id: "67",
+        name: "Ricotta",
+        kcal: 146,
+        macro: {
+            carbo: 3.50,
+            prot: 8.80,
+            fat: 10.90,
+        },
+        dose: 100
+    },
+    {
+        id: "68",
+        name: "Formaggio Grana Padano",
+        kcal: 398,
+        macro: {
+            carbo: 0,
+            prot: 33,
+            fat: 29,
+        },
+        dose: 100
+    },
 
     /* {
         id: "0",
