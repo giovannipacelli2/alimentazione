@@ -145,7 +145,7 @@ function App() {
 
         <Routes>
 
-        <Route exact path={`/${PATH}/`} element={
+        <Route path={`${PATH}/food`} element={
           <>
             <MainFoodList food={food} changeDose={changeDose} removeFood={removeFood} />
             { 
@@ -159,7 +159,7 @@ function App() {
           </>
         }/>
           
-          <Route path = {`${PATH}/search`} element={
+          <Route exact path = {`/${PATH}/`} element={
             <SearchForm database={database} setDatabase={setDatabase} />
           }/>
 

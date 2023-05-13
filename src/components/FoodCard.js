@@ -16,6 +16,7 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
     let calcFat = +fat / 100 * dose;
     let calcKcal = +kcal / 100 * dose;
 
+
     const editClick = (e, id)=> {
         e.preventDefault();
 
@@ -41,6 +42,12 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
         setIsEdit( (prevIsEdit) => !prevIsEdit );
     };
 
+
+    const handleClose = (id)=>{
+        setIsEdit(false);
+        removeFood(id);
+    };
+
   return (
     <form className="form food-container" onSubmit={ (e)=>{ editClick(e, id) } }>
         <h4>{name}</h4>
@@ -54,6 +61,7 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
                         className={ isError ? "input-error" : "" }
                         type='text' 
                         inputMode='Numeric'
+                        autoComplete='off'
                         onChange={ ()=>{ 
                             setIsError(false); 
                         } }
@@ -73,7 +81,7 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
         </div>
 
             <button
-                onClick={()=>{ removeFood(elem.id) }}
+                onClick={()=>{ handleClose(elem.id) }}
                 type='button'
                 className='close-btn'
             >

@@ -219,9 +219,14 @@ h4 {
     line-height: 0.3em;
 }
 
+.nav-icon {
+    height: fit-content;
+}
+
 .icons-text {
-    font-size: 0.4em;
+    font-size: 0.3em;
     max-width: fit-content;
+    text-transform: uppercase;
 
     -ms-text-size-adjust: auto;
 }
