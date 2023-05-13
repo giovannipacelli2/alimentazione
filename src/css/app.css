@@ -136,7 +136,7 @@ h4 {
 .generic-icon {
     text-align: center;
     vertical-align: middle;
-    font-size: 1.3em;
+    font-size: 1.4em;
     color: var(--clr-grey-2);
     cursor: pointer;    
     transition: var(--transition);
@@ -304,13 +304,16 @@ h4 {
     width: max-content;
     /* margin-bottom: var(--textMarginBottom); */
 }
-/*-----------------------INPUT----------------------*/
-.food-description .input-container {
-    margin: 1em;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/*----------------INPUT-FOOD-CONTAINER------------------*/
+.food-container span:not( .sum .food-container span ) {
+    font-size: 1.2em;
+}
+
+.edit-input-container input {
+    padding: 0.1em;
+    width: 3em;
+
+    font-size: 1.2em;
 }
 
 
@@ -511,14 +514,6 @@ h4 {
     .input-container>label{
         width: 30%;
     }
-
-    .food-container .input-container {
-        margin: 1em;
-    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     
     .input-container>*{
         margin: 0;
@@ -553,6 +548,6 @@ h4 {
     }
 
     .food-container {
-        width: 34em;
+        width: 28em;
     }
 }

@@ -121,7 +121,11 @@ function App() {
     setDatabase( (prevDatabase)=>{
       return prevDatabase.map( (food)=>{
         if ( food.id === id ) {
-          return { ...food, selected:!food.selected }
+          return { 
+            ...food, 
+            dose: 100,
+            selected:!food.selected 
+          }
         }
         else return food;
       } );

@@ -5,10 +5,10 @@ import FoodCard from './FoodCard';
 const MainFoodList = ({ food,changeDose ,removeFood }) => {
   return (
     <div className='food-card-grid'>
-        {food.map( (elem)=>{
+        {food.map( (elem, index)=>{
 
             return(
-                <FoodCard key={elem.id} elem={elem}  changeDose={changeDose} removeFood={removeFood}/>
+                <FoodCard key={index} id={elem.id} elem={elem}  changeDose={changeDose} removeFood={removeFood}/>
             );
             } )}
     </div>

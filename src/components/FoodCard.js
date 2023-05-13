@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { IoCloseOutline } from 'react-icons/io5';
 
@@ -18,8 +18,15 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
 
     const editClick = (e, id)=> {
         e.preventDefault();
+
         if (e.target.food) {
             let food = e.target.food.value;
+
+            if (food === "" ) {
+                setIsEdit(false);
+                return;
+            }
+
             let numFood = parseFloat(food);
         
             if ( isEdit && (isNaN(numFood) || numFood<=0 ) ) {
@@ -52,6 +59,7 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
                         } }
                         name='food'
                         id='food'
+                        placeholder="100"
                     /> :
                     <span><strong>{dose}</strong> g</span> 
                 }
@@ -66,6 +74,7 @@ const FoodCard = ({elem, changeDose, removeFood}) => {
 
             <button
                 onClick={()=>{ removeFood(elem.id) }}
+                type='button'
                 className='close-btn'
             >
                 <IoCloseOutline/>
