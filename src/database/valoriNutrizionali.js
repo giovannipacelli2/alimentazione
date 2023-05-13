@@ -706,6 +706,83 @@ export default [
         },
         dose: 100
     },
+    {
+        id: "60",
+        name: "Piselli",
+        kcal: 81,
+        macro: {
+            carbo: 14.45,
+            prot: 5.42,
+            fat: 0.40,
+        },
+        dose: 100
+    },
+    {
+        id: "61",
+        name: "Ceci",
+        kcal: 120,
+        macro: {
+            carbo: 18.90,
+            prot: 7,
+            fat: 2.4,
+        },
+        dose: 100
+    },
+    {
+        id: "62",
+        name: "Fagioli",
+        kcal: 102,
+        macro: {
+            carbo: 17,
+            prot: 7.90,
+            fat: 0.70,
+        },
+        dose: 100
+    },
+    {
+        id: "63",
+        name: "Lenticchie",
+        kcal: 92,
+        macro: {
+            carbo: 16.30,
+            prot: 6.90,
+            fat: 0.40,
+        },
+        dose: 100
+    },
+    {
+        id: "64",
+        name: "Tarallo",
+        kcal: 483,
+        macro: {
+            carbo: 69,
+            prot: 8,
+            fat: 19,
+        },
+        dose: 100
+    },
+    {
+        id: "65",
+        name: "Sofficino pom. e mozz.",
+        kcal: 306,
+        macro: {
+            carbo: 27,
+            prot: 8.4,
+            fat: 18,
+        },
+        dose: 100
+    },
+    {
+        id: "66",
+        name: "Brioche media",
+        kcal: 438,
+        macro: {
+            carbo: 65.70,
+            prot: 8.20,
+            fat: 17.60,
+        },
+        dose: 100
+    },
 
     /* {
         id: "0",
