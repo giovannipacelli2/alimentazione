@@ -785,7 +785,7 @@ export default [
     },
     {
         id: "67",
-        name: "Ricotta",
+        name: "Ricotta di mucca",
         kcal: 146,
         macro: {
             carbo: 3.50,
@@ -802,6 +802,116 @@ export default [
             carbo: 0,
             prot: 33,
             fat: 29,
+        },
+        dose: 100
+    },
+    {
+        id: "69",
+        name: "Banana",
+        kcal: 89,
+        macro: {
+            carbo: 22.84,
+            prot: 1.09,
+            fat: 0.33,
+        },
+        dose: 100
+    },
+    {
+        id: "70",
+        name: "Kiwi verde",
+        kcal: 44,
+        macro: {
+            carbo: 9,
+            prot: 1.20,
+            fat: 0.60,
+        },
+        dose: 100
+    },
+    {
+        id: "71",
+        name: "Arancia",
+        kcal: 45,
+        macro: {
+            carbo: 9.90,
+            prot: 0.70,
+            fat: 0.20,
+        },
+        dose: 100
+    },
+    {
+        id: "72",
+        name: "Passata di pomodori, sugo",
+        kcal: 18,
+        macro: {
+            carbo: 3,
+            prot: 1.30,
+            fat: 0.20,
+        },
+        dose: 100
+    },
+    {
+        id: "73",
+        name: "Broccoli cotti",
+        kcal: 39,
+        macro: {
+            carbo: 4.50,
+            prot: 4.30,
+            fat: 0.50,
+        },
+        dose: 100
+    },
+    {
+        id: "74",
+        name: "Carciofi cotti",
+        kcal: 82,
+        macro: {
+            carbo: 9.30,
+            prot: 10.10,
+            fat: 0.70,
+        },
+        dose: 100
+    },
+    {
+        id: "75",
+        name: "Cavolfiori cotti",
+        kcal: 40,
+        macro: {
+            carbo: 4.40,
+            prot: 5.30,
+            fat: 0.30,
+        },
+        dose: 100
+    },
+    {
+        id: "76",
+        name: "Asparagi cotti",
+        kcal: 41,
+        macro: {
+            carbo: 4.70,
+            prot: 5.10,
+            fat: 0.30,
+        },
+        dose: 100
+    },
+    {
+        id: "77",
+        name: "Pasticcini mignon",
+        kcal: 392,
+        macro: {
+            carbo: 63,
+            prot: 4.10,
+            fat: 14,
+        },
+        dose: 100
+    },
+    {
+        id: "78",
+        name: "Pasticcino",
+        kcal: 339,
+        macro: {
+            carbo: 60.31,
+            prot: 3.63,
+            fat: 15.93,
         },
         dose: 100
     },
