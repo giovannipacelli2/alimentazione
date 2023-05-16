@@ -914,6 +914,27 @@ export default [
             fat: 15.93,
         },
         dose: 100
+    },{
+        id: "79",
+        name: "Burro",
+        kcal: 758,
+        macro: {
+            carbo: 1.10,
+            prot: 0.80,
+            fat: 83.40,
+        },
+        dose: 100
+    },
+    {
+        id: "80",
+        name: "Zucchero (carbo di cui zuccheri)",
+        kcal: 392,
+        macro: {
+            carbo: 104.50,
+            prot: 0,
+            fat: 0,
+        },
+        dose: 100
     },
 
     /* {
