@@ -8,13 +8,16 @@
 /*------------------IMPORTANTE----------------*/
 
 body {
-    padding-top: 0;
+    padding-top: 1em;
     margin-bottom: 7em;
 }
 
 .red-message {
     color: var(--clr-red-dark);
     text-transform: none;
+    text-align: center;
+    padding: 0 1em;
+    width: 100% !important;
 }
 
 .page-title {
@@ -25,9 +28,6 @@ body {
 h4 {
     color: var(--clr-grey-1);
     font-size: 1.2em;
-}
-h4.red-message {
-    width: 100%;
 }
 
 .input-error {
@@ -471,7 +471,7 @@ h4.red-message {
 
     /*------------------IMPORTANTE----------------*/
     body {
-        padding-top: 1em;
+        padding-top: 0;
         margin-top: 0;
         margin-bottom: 0;
     }
