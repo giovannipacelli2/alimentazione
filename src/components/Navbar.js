@@ -24,14 +24,14 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <Link to={`${PATH}/food`}>
+        <Link to={`${PATH}food`}>
           <span className="nav-icons">
             <IoListSharp className='nav-icon'/>
             <span className='icons-text'>Alimenti</span>
           </span>
         </Link>
 
-        <Link to={`${PATH}/summary`}>
+        <Link to={`${PATH}summary`}>
           <span className="nav-icons">
             <AiOutlineTable className='nav-icon'/>
             <span className='icons-text'>Riepilogo</span>
@@ -39,7 +39,7 @@ const Navbar = () => {
         </Link>
 
 
-        <Link to={`${PATH}/add`}>
+        <Link to={`${PATH}add`}>
           <span className="nav-icons">
             <MdOutlineDashboardCustomize className='nav-icon'/>
             <span className='icons-text'>Modifica</span>
