@@ -145,7 +145,7 @@ function App() {
 
         <Routes>
 
-        <Route path={`${PATH}/food`} element={
+        <Route path={`${PATH}food`} element={
           <>
             <MainFoodList food={food} changeDose={changeDose} removeFood={removeFood} />
             { 
@@ -159,11 +159,11 @@ function App() {
           </>
         }/>
           
-          <Route exact path = {`/${PATH}/`} element={
+          <Route exact path = {`${PATH}`} element={
             <SearchForm database={database} setDatabase={setDatabase} />
           }/>
 
-          <Route path = {`${PATH}/add`} element={
+          <Route path = {`${PATH}add`} element={
             <AddLocal 
               database={database}
               setDatabase={setDatabase} 
@@ -172,7 +172,7 @@ function App() {
             />
           }/>
 
-          <Route path = {`${PATH}/summary`} element={
+          <Route path = {`${PATH}summary`} element={
             (total && weight !==0 ) ? 
               <Summary weight={weight} total={total} /> : 
               <>
