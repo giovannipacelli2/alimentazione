@@ -9,7 +9,6 @@ import {TbListSearch} from 'react-icons/tb';
 import {MdOutlineDashboardCustomize} from 'react-icons/md';
 
 /* const PATH = window.location.pathname.split(`/`)[1]; */
-const PATH = 'dist';
 
 
 const Navbar = () => {
@@ -17,21 +16,21 @@ const Navbar = () => {
     <header className='header-navbar'>
       <nav>
 
-        <Link to={`${PATH}/`}>
+        <Link to={`/`}>
           <span className="nav-icons">
             <TbListSearch className='nav-icon'/>
             <span className='icons-text'>Cerca</span>
           </span>
         </Link>
 
-        <Link to={`${PATH}/food`}>
+        <Link to={`/food`}>
           <span className="nav-icons">
             <IoListSharp className='nav-icon'/>
             <span className='icons-text'>Alimenti</span>
           </span>
         </Link>
 
-        <Link to={`${PATH}/summary`}>
+        <Link to={`/summary`}>
           <span className="nav-icons">
             <AiOutlineTable className='nav-icon'/>
             <span className='icons-text'>Riepilogo</span>
@@ -39,7 +38,7 @@ const Navbar = () => {
         </Link>
 
 
-        <Link to={`${PATH}/add`}>
+        <Link to={`/add`}>
           <span className="nav-icons">
             <MdOutlineDashboardCustomize className='nav-icon'/>
             <span className='icons-text'>Modifica</span>

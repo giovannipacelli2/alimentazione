@@ -15,7 +15,7 @@ import AddLocal from './components/AddLocal';
 import Summary from './components/Summary';
 
 /* const PATH = window.location.pathname.split(`/`)[1]; */
-const PATH = 'dist';
+const PATH = window.location.pathname;
 
 const VOID_MACRO = {
   kcal:0,
