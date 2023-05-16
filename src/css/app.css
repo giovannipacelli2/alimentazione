@@ -26,6 +26,9 @@ h4 {
     color: var(--clr-grey-1);
     font-size: 1.2em;
 }
+h4.red-message {
+    width: 100%;
+}
 
 .input-error {
     border-color: var(--clr-red-dark);
