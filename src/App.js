@@ -14,8 +14,8 @@ import SaveFood from './components/SaveFood';
 import AddLocal from './components/AddLocal';
 import Summary from './components/Summary';
 
-const PATH = window.location.pathname.split(`/`)[1];
-/* const PATH = window.location.pathname; */
+/* const PATH = window.location.pathname.split(`/`)[1]; */
+const PATH = 'dist';
 
 const VOID_MACRO = {
   kcal:0,
