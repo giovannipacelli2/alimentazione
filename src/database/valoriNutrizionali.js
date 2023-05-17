@@ -936,6 +936,28 @@ export default [
         },
         dose: 100
     },
+    {
+        id: "81",
+        name: "Panino, rosetta",
+        kcal: 269,
+        macro: {
+            carbo: 57.60,
+            prot: 9,
+            fat: 1.90,
+        },
+        dose: 100
+    },
+    {
+        id: "82",
+        name: "Pizza Margerita",
+        kcal: 271,
+        macro: {
+            carbo: 52.90,
+            prot: 5.60,
+            fat: 5.60,
+        },
+        dose: 350
+    },
 
     /* {
         id: "0",
