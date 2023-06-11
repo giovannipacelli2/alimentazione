@@ -958,6 +958,50 @@ export default [
         },
         dose: 350
     },
+    {
+        id: "83",
+        name: "Jocca fiocchi di latte senza lattosio",
+        kcal: 93,
+        macro: {
+            carbo: 4.00,
+            prot: 8.80,
+            fat: 4.50,
+        },
+        dose: 100
+    },
+    {
+        id: "84",
+        name: "Zucchine cotte",
+        kcal: 27,
+        macro: {
+            carbo: 3.40,
+            prot: 3.20,
+            fat: 0.20,
+        },
+        dose: 100
+    },
+    {
+        id: "85",
+        name: "Philadelphia senza lattosio",
+        kcal: 275,
+        macro: {
+            carbo: 2.70,
+            prot: 4.50,
+            fat: 27.50,
+        },
+        dose: 100
+    },
+    {
+        id: "86",
+        name: "Philadelphia Light",
+        kcal: 173,
+        macro: {
+            carbo: 4.10,
+            prot: 6.80,
+            fat: 14.00,
+        },
+        dose: 100
+    },
 
     /* {
         id: "0",
