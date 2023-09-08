@@ -13,12 +13,12 @@ export default [
 
     {
         id: "2",
-        name: "Cereali con cioccolato",
-        kcal: 369,
+        name: "Cereali Flakes",
+        kcal: 358,
         macro: {
-            carbo: 75,
-            prot: 9,
-            fat: 2.5,
+            carbo: 66.20,
+            prot: 11.10,
+            fat: 2.0,
         },
         dose: 100
     },
@@ -999,6 +999,17 @@ export default [
             carbo: 4.10,
             prot: 6.80,
             fat: 14.00,
+        },
+        dose: 100
+    },
+    {
+        id: "87",
+        name: "Proteine Whey siero del latte senza lattosio",
+        kcal: 400,
+        macro: {
+            carbo: 7.60,
+            prot: 81,
+            fat: 5.10,
         },
         dose: 100
     },
