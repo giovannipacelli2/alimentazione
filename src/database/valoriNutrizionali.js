@@ -1,7 +1,7 @@
 export default [
     {
         id: "1",
-        name: "Cereali",
+        name: "Cereali Corn flakes",
         kcal: 378,
         macro: {
             carbo: 84,
@@ -13,7 +13,7 @@ export default [
 
     {
         id: "2",
-        name: "Cereali Flakes",
+        name: "Cereali Flakes Lidl",
         kcal: 358,
         macro: {
             carbo: 66.20,
@@ -1010,6 +1010,82 @@ export default [
             carbo: 7.60,
             prot: 81,
             fat: 5.10,
+        },
+        dose: 100
+    },{
+        id: "88",
+        name: "Pera",
+        kcal: 35,
+        macro: {
+            carbo: 8.80,
+            prot: 0.30,
+            fat: 0.10,
+        },
+        dose: 100
+    },
+    {
+        id: "89",
+        name: "Pesca",
+        kcal: 25,
+        macro: {
+            carbo: 5.80,
+            prot: 0.70,
+            fat: 0,
+        },
+        dose: 100
+    },
+    {
+        id: "90",
+        name: "Mozzarella Santa Lucia",
+        kcal: 222,
+        macro: {
+            carbo: 0.20,
+            prot: 17.00,
+            fat: 17.00,
+        },
+        dose: 100
+    },
+    {
+        id: "91",
+        name: "Riso",
+        kcal: 395,
+        macro: {
+            carbo: 80,
+            prot: 7.10,
+            fat: 0.70,
+        },
+        dose: 100
+    },
+    {
+        id: "92",
+        name: "Patate leggere",
+        kcal: 131,
+        macro: {
+            carbo: 20.00,
+            prot: 2.40,
+            fat: 4.10,
+        },
+        dose: 100
+    },
+    {
+        id: "93",
+        name: "Spinaci",
+        kcal: 31,
+        macro: {
+            carbo: 2.90,
+            prot: 3.40,
+            fat: 0.70,
+        },
+        dose: 100
+    },
+    {
+        id: "94",
+        name: "Pomodori",
+        kcal: 19,
+        macro: {
+            carbo: 3.50,
+            prot: 1,
+            fat: 0.20,
         },
         dose: 100
     },
