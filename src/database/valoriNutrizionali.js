@@ -1089,6 +1089,50 @@ export default [
         },
         dose: 100
     },
+    {
+        id: "95",
+        name: "Yogurt greco bianco senza lattosio",
+        kcal: 55.0,
+        macro: {
+            carbo: 3.5,
+            prot: 10.3,
+            fat: 0,
+        },
+        dose: 100
+    },
+    {
+        id: "96",
+        name: "Nutella fit",
+        kcal: 132.6,
+        macro: {
+            carbo: 5.9,
+            prot: 7.4,
+            fat: 6.7,
+        },
+        dose: 100
+    },
+    {
+        id: "97",
+        name: "Spremuta d'arancia",
+        kcal: 45.0,
+        macro: {
+            carbo: 10.0,
+            prot: 0.7,
+            fat: 0.2,
+        },
+        dose: 100
+    },
+    {
+        id: "98",
+        name: "Piadina",
+        kcal: 338,
+        macro: {
+            carbo: 53,
+            prot: 8.4,
+            fat: 11.7,
+        },
+        dose: 100
+    },
 
     /* {
         id: "0",
