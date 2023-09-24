@@ -13,9 +13,11 @@ import SumFood from './components/SumFood';
 import SaveFood from './components/SaveFood';
 import AddLocal from './components/AddLocal';
 import Summary from './components/Summary';
+import ErrorPage from './components/ErrorPage';
 
-/* const PATH = window.location.pathname.split(`/`)[1]; */
-const PATH = window.location.pathname;
+//const PATH = window.location.pathname.split(`/`)[1];
+//const PATH = window.location.pathname;
+const PATH = "/";
 
 const VOID_MACRO = {
   kcal:0,
@@ -180,6 +182,11 @@ function App() {
                 { weight ===0 && <h4 className='red-message'>Vai nella sezione "Modifica" ed inserisci il tuo peso</h4> }
               </>
           }/>
+
+          <Route path='*' element={
+            <ErrorPage />
+          } />
+
         </Routes>
         </main>
     </Router>

@@ -9,7 +9,8 @@ import {TbListSearch} from 'react-icons/tb';
 import {MdOutlineDashboardCustomize} from 'react-icons/md';
 
 /* const PATH = window.location.pathname.split(`/`)[1]; */
-const PATH = window.location.pathname;
+//const PATH = window.location.pathname;
+const PATH = "/";
 
 
 const Navbar = () => {
