@@ -162,7 +162,18 @@ h4 {
 }
 /*-----------Section-input-search---------*/
 
+label[for="search"]>h4 {
+
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .search-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,9 +182,24 @@ h4 {
 .search-container input {
     
     border: 1px solid var(--clr-primary-1);
+    /* border: 1px solid rgb(165, 165, 165); */
+    width: 100%;
+    /* box-shadow: 0px 2px 2px #00000066; */
+    padding: 0.4em 0.8em;
+    font-size: 1.2em;
+
+    border-radius: 0.6em;
+}
+
+.search-container input:focus {
+    border-color: var(--clr-primary-3);
+    outline-color: var(--clr-primary-3);
 }
 
 .icon-search {
+
+    position: absolute;
+    right: -1.5em;
     margin: 0 0.2em;
     font-size: 1.2em;
     color: var(--clr-primary-5);
@@ -465,6 +491,12 @@ h4 {
 @media screen and (min-width:380px) {
     .page-title {
         width: 20em;
+    }
+
+    /*-----------Section-input-search---------*/
+
+    .search-container {
+        width: 70%;
     }
 }
 @media screen and (min-width:476px) {
