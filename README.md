@@ -2,5 +2,5 @@
 
 ## Link all'app
 
-### [https://giovannipacelli2.github.io/alimentazione/dist/](https://giovannipacelli2.github.io/alimentazione/dist/)
+### [Gestisci alimentazione](https://gestisci-alimentazione.netlify.app/)
 
